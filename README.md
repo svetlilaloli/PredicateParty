@@ -4,7 +4,7 @@ Exercises: Functional Programming
 Paul’s parents are on a vacation for the holidays and he is planning an epic party at home. Unfortunately, his organizational skills are next to non-existent, so you are given the task to help him with the reservations.
 
 
-On the __first line__, you receive __a list with all the people__ that are coming. On the __next lines__, until you get the __"Party!" command__, you may be asked to __double__ or __remove__ all the people that apply to a given __criteria__. There are __three different criter__ia: 
+On the __first line__, you receive __a list with all the people__ that are coming. On the __next lines__, until you get the __"Party!" command__, you may be asked to __double__ or __remove__ all the people that apply to a given __criteria__. There are __three different criteria__: 
 - Everyone that has a name __starting with__ a given string
 - Everyone that has a name __ending with__ a given string
 - Everyone that has a name with __a given length__.
