@@ -1,0 +1,7 @@
+C:\Users\Sony Vaio\source\repos\FunctionalProgramming\PredicateParty\bin\Debug\PredicateParty.exe.config
+C:\Users\Sony Vaio\source\repos\FunctionalProgramming\PredicateParty\bin\Debug\PredicateParty.exe
+C:\Users\Sony Vaio\source\repos\FunctionalProgramming\PredicateParty\bin\Debug\PredicateParty.pdb
+C:\Users\Sony Vaio\source\repos\FunctionalProgramming\PredicateParty\obj\Debug\PredicateParty.csprojAssemblyReference.cache
+C:\Users\Sony Vaio\source\repos\FunctionalProgramming\PredicateParty\obj\Debug\PredicateParty.csproj.CoreCompileInputs.cache
+C:\Users\Sony Vaio\source\repos\FunctionalProgramming\PredicateParty\obj\Debug\PredicateParty.exe
+C:\Users\Sony Vaio\source\repos\FunctionalProgramming\PredicateParty\obj\Debug\PredicateParty.pdb
