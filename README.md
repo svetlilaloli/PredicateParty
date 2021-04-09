@@ -8,6 +8,8 @@ On the __first line__, you receive __a list with all the people__ that are comin
 - Everyone that has a name __starting with__ a given string
 - Everyone that has a name __ending with__ a given string
 - Everyone that has a name with __a given length__.
+
+
 Finally, __print all the guests__ who are going to the party __separated by ", "__ and then add the ending __"are going to the party!"__. If there are __no guests__ going to the party print __"Nobody is going to the party!"__. See the examples below:
 ## Examples
 Input|Output
