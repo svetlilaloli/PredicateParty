@@ -18,41 +18,41 @@ namespace PredicateParty
                 {
                     if (command[1] == "StartsWith")
                     {
-                        guests = Filtered(guests, x => !x.StartsWith(command[2])).ToList();
+                        guests = RemoveGuests(guests, x => !x.StartsWith(command[2])).ToList();
                     }
                     else if (command[1] == "EndsWith")
                     {
-                        guests = Filtered(guests, x => !x.EndsWith(command[2])).ToList();
+                        guests = RemoveGuests(guests, x => !x.EndsWith(command[2])).ToList();
                     }
                     else
                     {
-                        guests = Filtered(guests, x => x.Length != int.Parse(command[2])).ToList();
+                        guests = RemoveGuests(guests, x => x.Length != int.Parse(command[2])).ToList();
                     }
                 }
                 else
                 {
                     if (command[1] == "StartsWith")
                     {
-                        guests = Doubled(guests, name => name.StartsWith(command[2])).ToList();
+                        guests = DoubleGuests(guests, name => name.StartsWith(command[2])).ToList();
                     }
                     else if (command[1] == "EndsWith")
                     {
-                        guests = Doubled(guests, name => name.EndsWith(command[2])).ToList();
+                        guests = DoubleGuests(guests, name => name.EndsWith(command[2])).ToList();
                     }
                     else
                     {
-                        guests = Doubled(guests, name => name.Length == int.Parse(command[2])).ToList();
+                        guests = DoubleGuests(guests, name => name.Length == int.Parse(command[2])).ToList();
                     }
                 }
                 command = Console.ReadLine().Split();
             }
             PrintGuests(guests);
         }
-        static IEnumerable<string> Filtered(IEnumerable<string> collection, Predicate<string> isFiltered)
+        static IEnumerable<string> RemoveGuests(IEnumerable<string> collection, Predicate<string> isFiltered)
         {
             return collection.Where(x => isFiltered(x));
         }
-        static IEnumerable<string> Doubled(IEnumerable<string> collection, Predicate<string> isDoubled)
+        static IEnumerable<string> DoubleGuests(IEnumerable<string> collection, Predicate<string> isDoubled)
         {
             List<string> result = new List<string>();
             
