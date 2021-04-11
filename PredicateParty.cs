@@ -11,91 +11,55 @@ namespace PredicateParty
         {
             List<string> guests = Console.ReadLine().Split().ToList();
             string[] command = Console.ReadLine().Split();
-            
+
             while (command[0] != "Party!")
             {
                 if (command[0] == "Remove")
                 {
                     if (command[1] == "StartsWith")
                     {
-                        guests = RemoveStartsWith(command[2], guests).ToList();
+                        guests = Filtered(guests, x => !x.StartsWith(command[2])).ToList();
                     }
                     else if (command[1] == "EndsWith")
                     {
-                        guests = RemoveEndsWith(command[2], guests).ToList();
+                        guests = Filtered(guests, x => !x.EndsWith(command[2])).ToList();
                     }
                     else
                     {
-                        guests = RemoveWithLength(command[2], guests).ToList();
+                        guests = Filtered(guests, x => x.Length != int.Parse(command[2])).ToList();
                     }
                 }
                 else
                 {
                     if (command[1] == "StartsWith")
                     {
-                        guests = DoubleStartsWith(command[2], guests).ToList();
+                        guests = Doubled(guests, name => name.StartsWith(command[2])).ToList();
                     }
                     else if (command[1] == "EndsWith")
                     {
-                        guests = DoubleEndsWith(command[2], guests).ToList();
+                        guests = Doubled(guests, name => name.EndsWith(command[2])).ToList();
                     }
                     else
                     {
-                        guests = DoubleWithLength(command[2], guests).ToList();
+                        guests = Doubled(guests, name => name.Length == int.Parse(command[2])).ToList();
                     }
                 }
                 command = Console.ReadLine().Split();
             }
             PrintGuests(guests);
         }
-        static IEnumerable<string> RemoveStartsWith(string substr, IEnumerable<string> collection)
+        static IEnumerable<string> Filtered(IEnumerable<string> collection, Predicate<string> isFiltered)
         {
-            return collection.Where(x => !x.StartsWith(substr));
+            return collection.Where(x => isFiltered(x));
         }
-        static IEnumerable<string> RemoveEndsWith(string substr, IEnumerable<string> collection)
-        {
-            return collection.Where(x => !x.EndsWith(substr));
-        }
-        static IEnumerable<string> RemoveWithLength(string substr, IEnumerable<string> collection)
-        {
-            return collection.Where(x => x.Length != int.Parse(substr));
-        }
-        static IEnumerable<string> DoubleStartsWith(string substr, IEnumerable<string> collection)
+        static IEnumerable<string> Doubled(IEnumerable<string> collection, Predicate<string> isDoubled)
         {
             List<string> result = new List<string>();
             
             foreach (string name in collection)
             {
                 result.Add(name);
-                if (name.StartsWith(substr))
-                {
-                    result.Add(name);
-                }
-            }
-            return result;
-        }
-        static IEnumerable<string> DoubleEndsWith(string substr, IEnumerable<string> collection)
-        {
-            List<string> result = new List<string>();
-
-            foreach (string name in collection)
-            {
-                result.Add(name);
-                if (name.EndsWith(substr))
-                {
-                    result.Add(name);
-                }
-            }
-            return result;
-        }
-        static IEnumerable<string> DoubleWithLength(string substr, IEnumerable<string> collection)
-        {
-            List<string> result = new List<string>();
-
-            foreach (string name in collection)
-            {
-                result.Add(name);
-                if (name.Length == int.Parse(substr))
+                if (isDoubled(name))
                 {
                     result.Add(name);
                 }
