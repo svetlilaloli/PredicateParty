@@ -68,21 +68,21 @@ namespace PredicateParty
         }
         static void PrintGuests(IEnumerable<string> guests)
         {
-            StringBuilder result = new StringBuilder(string.Join(", ", guests));
+            StringBuilder output = new StringBuilder(string.Join(", ", guests));
 
             if (guests.Count() > 1)
             {
-                result.Append(" are going to the party!");
+                output.Append(" are going to the party!");
             }
             else if (guests.Count() == 1)
             {
-                result.Append(" is going to the party!");
+                output.Append(" is going to the party!");
             }
             else
             {
-                result.Append("Nobody is going to the party!");
+                output.Append("Nobody is going to the party!");
             }
-            Console.WriteLine(result);
+            Console.WriteLine(output);
         }
     }
 }
